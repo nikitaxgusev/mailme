@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORK_DIR=$(pwd)
+WORK_DIR="/home/pi/mailme" #TODO: discover the path of the work dir
 
 #system
 NL=$'\n'
@@ -30,11 +30,11 @@ function CheckFilesCounter() {
 	current_count=$1
 	PATH_TO_DIR=$2
 	
-	file_count="5"
-	if [ "$current_count" == "$file_count" ]
+	file_limit_count="5"
+	if [ "$current_count" == "$file_limit_count" ]
 	then
 		str_state="Removing files in $PATH_TO_DIR"
-		rm -rf $PATH_TO_DIR
+		rm -rf "$PATH_TO_DIR/*"
 	else
     	str_state="Current quantity of files: $current_count -  dir: $PATH_TO_DIR"
 	fi
