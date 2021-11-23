@@ -34,7 +34,7 @@ function CheckFilesCounter() {
 	if [ "$current_count" == "$file_limit_count" ]
 	then
 		str_state="Removing files in $PATH_TO_DIR"
-		rm -rf "$PATH_TO_DIR/*"
+		rm -rf $PATH_TO_DIR/*
 	else
     	str_state="Current quantity of files: $current_count -  dir: $PATH_TO_DIR"
 	fi
